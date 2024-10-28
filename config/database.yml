@@ -85,8 +85,8 @@ production:
   encoding: unicode
   database: registro_poste_production
   pool: 5
-  username: registro_poste
-  password: dscjcl15  # Substitua pela sua senha real
+  username: postgres
+  password: Banguela153*  # Substitua pela sua senha real
   host: db  # Nome do serviço do banco de dados definido no docker-compose
   port: 5432
 
