@@ -1,0 +1,13 @@
+<div class="absolute flex flex-col justify-center items-center z-50 top-0 left-0 w-full h-screen bg-gradient-to-r from-gray-700 via-gray-900 to-black bg-opacity-60 backdrop-blur-lg">
+  <h1 class="text-3xl font-extrabold text-white mb-8 dark:text-gray-200">New User</h1>
+
+  <div class="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-lg w-full max-w-md">
+    <%= render "form", user: @user %>
+  </div>
+
+  <br>
+
+  <div class="mt-4">
+    <%= link_to "Back to Users", users_path, class: "text-blue-500 hover:underline dark:text-blue-400 font-semibold" %>
+  </div>
+</div>

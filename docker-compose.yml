@@ -1,0 +1,30 @@
+version: '3.7'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      RAILS_ENV: production
+      SECRET_KEY_BASE: "b80c16c55b11da9e500b65650c1ae8e3107f3daa2f884e23dedbf4b33692917c208bda50cbf65906cfde04483c8e7f941c82c3f1075895f6ff7bfe48f1e154d4"
+    volumes:
+      - .:/rails
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    command: bundle exec puma -C config/puma.rb
+    # command: ["./bin/rails", "server", "-b", "0.0.0.0", "-p", "3000"]
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: registro_poste
+      POSTGRES_PASSWORD: dscjcl15 # Altere para uma senha segura
+      POSTGRES_DB: registro_poste_production
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

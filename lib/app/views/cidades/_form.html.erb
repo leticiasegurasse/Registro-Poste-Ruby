@@ -1,0 +1,30 @@
+
+    <!-- Mensagem de Erro -->
+    <% if cidade.errors.any? %>
+      <div class="mb-6 p-4 bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300 rounded-lg">
+        <h2 class="text-lg font-semibold">
+          <%= pluralize(cidade.errors.count, "error") %> prohibited this cidade from being saved:
+        </h2>
+        <ul class="mt-2 list-disc pl-5 space-y-1">
+          <% cidade.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <!-- Formulário de Cidade -->
+    <%= form_with(model: cidade, class: "space-y-6") do |form| %>
+      
+      <!-- Campo Nome -->
+      <div>
+        <%= form.label :nome, class: "block text-gray-700 dark:text-gray-200 font-semibold" %>
+        <%= form.text_field :nome, class: "mt-1 block w-full px-4 py-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500" %>
+      </div>
+
+      <!-- Botão de Enviar -->
+      <div class="text-center">
+        <%= form.submit "Save", class: "px-4 py-2 bg-blue-500 text-white rounded-md shadow hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 transition-colors" %>
+      </div>
+
+    <% end %>

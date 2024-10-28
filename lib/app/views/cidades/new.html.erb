@@ -1,0 +1,14 @@
+<div class="min-h-screen flex flex-col items-center justify-center bg-gray-100 dark:bg-gray-900 p-6 space-y-6">
+  
+  <!-- Título da Página -->
+  <h1 class="text-3xl font-semibold text-gray-800 dark:text-gray-100 mb-4">New Cidade</h1>
+
+  <!-- Formulário Renderizado -->
+  <%= render "form", cidade: @cidade %>
+
+  <!-- Link de Voltar -->
+  <div class="text-center mt-4">
+    <%= link_to "Back to cidades", cidades_path, class: "text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-500 transition-colors underline" %>
+  </div>
+
+</div>
