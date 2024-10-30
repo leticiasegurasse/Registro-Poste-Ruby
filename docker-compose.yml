@@ -1,4 +1,4 @@
-version: '3.7'
+version: '3.8'
 
 services:
   app:
@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     environment:
       RAILS_ENV: production
-      SECRET_KEY_BASE: "b80c16c55b11da9e500b65650c1ae8e3107f3daa2f884e23dedbf4b33692917c208bda50cbf65906cfde04483c8e7f941c82c3f1075895f6ff7bfe48f1e154d4"
+      SECRET_KEY_BASE: "f3e0b86c68ec0ff6fb06137280115575c84d903f00e2b1c53382d1abdc9221037cc3834c3846a1ca0fe05820d60b202dce09a880fe05ce3728df2c2feb3337e0"
     volumes:
       - .:/rails
     ports:
@@ -20,8 +20,8 @@ services:
   db:
     image: postgres:13
     environment:
-      POSTGRES_USER: registro_poste
-      POSTGRES_PASSWORD: dscjcl15 # Altere para uma senha segura
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Banguela153* # Altere para uma senha segura
       POSTGRES_DB: registro_poste_production
     volumes:
       - postgres_data:/var/lib/postgresql/data

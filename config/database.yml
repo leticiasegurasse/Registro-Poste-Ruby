@@ -19,18 +19,18 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: postgres
-  password: dscjcl15
+  password: Banguela153*
   host: localhost
 
 development:
   <<: *default
-  database: registro_poste_development
+  database: registro_poste_ruby_development
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
   # When left blank, PostgreSQL will use the default role. This is
   # the same name as the operating system user running Rails.
-  #username: registro_poste
+  #username: registro_poste_ruby
 
   # The password associated with the PostgreSQL role (username).
   #password:
@@ -58,7 +58,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: registro_poste_test
+  database: registro_poste_ruby_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -83,10 +83,9 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: registro_poste_production
+  database: registro_poste_ruby_production
   pool: 5
   username: postgres
-  password: Banguela153*  # Substitua pela sua senha real
-  host: db  # Nome do serviço do banco de dados definido no docker-compose
+  password: Banguela153*
+  host: db
   port: 5432
-

@@ -1,8 +1,7 @@
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
     origins "http://localhost:3000",
-            "http://104.236.241.235",
-            "http://yourwebsite.production.app",
+            "https://postes.g2telecom.com.br",
             /\Ahttps:\/\/deploy-preview-\d{1,4}--yourwebsite\.domain\.app\z/
 
     resource "*",

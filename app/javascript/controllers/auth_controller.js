@@ -7,7 +7,7 @@ export default class extends Controller {
 
   async login(event) {
     event.preventDefault();
-    const url = "http://localhost:3000/login";
+    const url = "https://postes.g2telecom.com.br/login";
     const data = {
       email: this.element.querySelector("input[id='email']").value,
       password: this.element.querySelector("input[id='password']").value,
