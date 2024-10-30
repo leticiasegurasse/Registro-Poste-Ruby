@@ -1,1 +1,24 @@
-<div data-controller="cidades"></div>
+<div class="w-full h-screen flex flex-col gap-14 px-24">
+  <p class="text-green-500"><%= notice %></p>
+  <h1 class="text-4xl font-bold text-blue-600">Cidades</h1>
+  <%= link_to "Nova Cidade", new_cidade_path, class: "bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600 transition-colors duration-200 w-40 text-center" %>
+  
+
+  <div id="cidades" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 w-full px-10">
+    <% @cidades.each do |cidade| %>
+      <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition-shadow duration-300">
+        <h2 class="text-xl font-semibold text-gray-800"><%= cidade.name %></h2>
+        <p class="text-sm text-gray-600 mb-4">Group: <%= cidade.cidade_group.name %></p>
+        
+        <div class="mb-4">
+          <p class="text-gray-700"><strong>Proteins:</strong> <%= cidade.protein %>g</p>
+          <p class="text-gray-700"><strong>Lipids:</strong> <%= cidade.lipid %>g</p>
+          <p class="text-gray-700"><strong>Carbohydrates:</strong> <%= cidade.carbohydrate %>g</p>
+        </div>
+
+        <%= link_to "Ver cidade", cidade, class: "text-indigo-600 hover:underline font-medium" %>
+      </div>
+    <% end %>
+  </div>
+
+</div>
