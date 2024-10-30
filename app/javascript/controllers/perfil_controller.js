@@ -16,7 +16,7 @@ export default class extends Controller {
       return;
     }
 
-    const url = "http://localhost:3000/users/perfil"; // URL para buscar as informações do usuário
+    const url = "https://postes.g2telecom.com.br/users/perfil"; // URL para buscar as informações do usuário
     try {
       const response = await fetch(url, {
         method: 'GET',
@@ -81,7 +81,7 @@ export default class extends Controller {
     const newPassword = event.target.new_password.value;
     const newPasswordConfirmation = event.target.new_password_confirmation.value;
 
-    const url = "http://localhost:3000/users/update_password"; // URL para atualizar a senha
+    const url = "https://postes.g2telecom.com.br/users/update_password"; // URL para atualizar a senha
     try {
       const response = await fetch(url, {
         method: 'PATCH',

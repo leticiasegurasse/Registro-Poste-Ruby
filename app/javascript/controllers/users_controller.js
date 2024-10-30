@@ -9,7 +9,7 @@ export default class extends Controller {
     this.renderUser();
   }
 
-  static uri = 'http://localhost:3000/users/'
+  static uri = 'https://postes.g2telecom.com.br/users/'
   async createUser(event) {
     event.preventDefault();
     const data = {
