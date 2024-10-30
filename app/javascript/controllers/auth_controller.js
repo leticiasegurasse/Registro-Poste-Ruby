@@ -7,7 +7,7 @@ export default class extends Controller {
 
   async login(event) {
     event.preventDefault();
-    const url = "https://postes.g2telecom.com.br/login";
+    const url = "http://localhost:3000/login";
     const data = {
       email: this.element.querySelector("input[id='email']").value,
       password: this.element.querySelector("input[id='password']").value,
@@ -24,6 +24,7 @@ export default class extends Controller {
       const tokenJson = await response.json();
       localStorage.setItem('auth', tokenJson.token)
       console.log(localStorage.getItem('auth'));
+      // debugger
       window.location.href = "/postes";
     } catch(error) {
       console.log(error);
@@ -34,6 +35,12 @@ export default class extends Controller {
   async renderForm() {
     this.element.innerHTML = `
       <div class="absolute flex justify-center items-center z-50 top-0 left-0 w-full h-screen bg-gradient-to-r from-gray-700 via-gray-900 to-black bg-opacity-60 backdrop-blur-lg">
+        <div data-controller="toast">
+          <div data-toast-target="container" class="hidden">
+            <div data-toast-target="message"></div>
+          </div>
+        </div>
+        
         <form data-action="submit->auth#login" class="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-8 w-full max-w-lg">
           <h2 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Login</h2>
           <div class="mb-6">
@@ -46,13 +53,12 @@ export default class extends Controller {
           </div>
           <div class="flex items-center mb-6">
             <a href="/user" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Cadastro</a>
-            <!--<input id="remember" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600">
-              <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>-->
           </div>
           <button type="submit" class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-3 text-center dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus:ring-blue-800">Submit</button>
         </form>
       </div>
-    `
-  }
+    `;
+}
+
 
 }

@@ -20,7 +20,7 @@ export default class extends Controller {
     modal.classList.toggle('hidden');
   }
   
-  static url = 'https://postes.g2telecom.com.br'
+  static url = 'http://localhost:3000'
 
   async getLocation() {
     return new Promise((resolve, reject) => {
