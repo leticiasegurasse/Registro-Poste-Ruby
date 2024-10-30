@@ -7,15 +7,9 @@
   <div id="bairros" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 w-full px-10">
     <% @bairros.each do |bairro| %>
       <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition-shadow duration-300">
-        <h2 class="text-xl font-semibold text-gray-800"><%= bairro.name %></h2>
-        <p class="text-sm text-gray-600 mb-4">Group: <%= bairro.bairro_group.name %></p>
+        <h2 class="text-xl font-semibold text-gray-800"><%= bairro.nome %></h2>
+        <p class="text-sm text-gray-600 mb-4">Group: <%= bairro.cidade_id %></p>
         
-        <div class="mb-4">
-          <p class="text-gray-700"><strong>Proteins:</strong> <%= bairro.protein %>g</p>
-          <p class="text-gray-700"><strong>Lipids:</strong> <%= bairro.lipid %>g</p>
-          <p class="text-gray-700"><strong>Carbohydrates:</strong> <%= bairro.carbohydrate %>g</p>
-        </div>
-
         <%= link_to "Ver bairro", bairro, class: "text-indigo-600 hover:underline font-medium" %>
       </div>
     <% end %>
